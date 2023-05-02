@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Tela de Matriz</title>
+    <style>
+        .matrix-cell {
+            background-color: #ffffff;
+        }
+
+        .matrix-cell-red {
+            box-sizing: border-box; /* Adicionado */
+            padding: 40px;
+            border-top: 3px solid #800000;
+            border-left:3px solid #800000;
+            background-color: 3px solid #ffffff;
+            
+        }
+
+        .matrix-cell-white {
+            border-top: 3px solid #800000;
+            border-left: 3px solid #800000;
+            border-bottom:3px solid #800000;
+            background-color:3px solid #FFFFFF;
+            box-sizing: border-box; /* Adicionado */
+            padding: 4px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+        <h2>Tela de Matriz</h2>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-4 offset-4">
+        <div class="form-group">
+            <label for="method">Método:</label>
+            <select class="form-control" id="method">
+            <option value="RN">RN</option>
+            <option value="RNZ">RNZ</option>
+            <option value="Manchester">Manchester</option>
+            <option value="ManchesterDiferencial">Manchester Diferencial</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="text">Texto:</label>
+            <input type="text" class="form-control" id="text">
+        </div>
+        <div class="form-group text-center">
+            <button type="button" class="btn btn-primary" onclick="drawMatrix()">Enviar</button>
+        </div>
+        </div>
+    </div>
+    <div class="row mt-12">
+        <div class="col-12">
+        <br>
+        <div id="matrix"></div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

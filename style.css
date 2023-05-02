@@ -1,0 +1,37 @@
+body {
+    background-color: #343a40;
+    color: #7a4c4c;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    max-width: 600px; /* largura máxima do container */
+    margin: 0 auto; /* centraliza o container horizontalmente */
+    /* outros estilos personalizados */
+}
+
+.matriz-row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .matriz-cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .matriz-space {
+    width: 80%;
+    height: 80%;
+    background-color: white;
+  }
+  
+  
