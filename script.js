@@ -13,7 +13,7 @@ function drawMatrix() {
       if(text[j] === "0"){
         matrixHTML += "<td style='border-top: white'class='matrix-cell-white'></td>";
       }else{
-        matrixHTML += "<td style='border-top: 3px solid red' class='matrix-cell-red'></td>";
+        matrixHTML += "<td style='border-top: 3px solid #800000' class='matrix-cell-red'></td>";
       }
     }
     matrixHTML += "</tr>";
