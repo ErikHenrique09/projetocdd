@@ -30,6 +30,7 @@ function drawMatrix() {
         }else{
           matrixHTML += "<td style='border-top: 3px solid #800000' class='matrix-cell-red'></td>";
         }
+
       }
     }
     matrixHTML += "</tr>";
