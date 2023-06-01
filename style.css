@@ -1,7 +1,7 @@
 
 :root {
     /* Sobre a pagina */
-    --bgColor: lightgrey;
+    --bgColor: rgb(231, 226, 226);
     /*Propriedades da linha tracejada do grafico*/
     --widthTrace: 3px;
     --colorTrace: gray;
