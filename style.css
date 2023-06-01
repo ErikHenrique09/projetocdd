@@ -1,12 +1,26 @@
 
+:root {
+    /*Propriedades da linha tracejada do grafico*/
+    --colorTrace: gray;
+    --widthTrace: 3px;
+    --typeTrace: dashed;
+
+    /*Propriedades das celulas que montam a codificação de linha*/
+    --heightCell: 80px;
+    --widthLineCODEC: 3px;
+    --typeLineCODEC: solid;
+    --colorLineCODEC: #800000;
+    --drawLineCODEC: var(--widthLineCODEC)  var(--typeLineCODEC)  var(--colorLineCODEC)  ;
+}
+
 body{
-    background-color: redm;
+    background-color: lightgrey;
 }
 
 label{
     font-size: 15px;
     font-weight: 1000;
-    color: black
+    color: black;
 }
 
 .legenda{
@@ -15,10 +29,15 @@ label{
     font-weight: 500;
     font-size: 20px;
     border: transparent;
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
     width: 50px;
 }
 .legenda:hover{
     background-color: grey;
+}
+
+.normRow{
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
 }
 
 .leftBorder{
@@ -33,84 +52,168 @@ label{
 
 /* Montagem de celulas dio grafico Manchester*/
 .mch0p1{
-    border-right: 3px solid #800000;
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawLineCODEC);
+    height:var(--heightCell);
 }
 .mch0p11{
-    border-right: 3px solid #800000;
-    border-left: 3px solid #800000;
+    border-right: var(--drawLineCODEC);
+    border-left: var(--drawLineCODEC);
+    height:var(--heightCell);
 }
 .mch0p2{
-    border-bottom: 3px solid #800000;
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    height:var(--heightCell);
 }
 
 .mch1p1{
-    border-bottom: 3px solid #800000;
-    border-right: 3px solid #800000;
-    height:80px
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--drawLineCODEC);
+    height:var(--heightCell);
 }
 .mch1p11{
-    border-bottom: 3px solid #800000;
-    border-right: 3px solid #800000;
-    border-left: 3px solid #800000;
-    height:80px
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--drawLineCODEC);
+    border-left: var(--drawLineCODEC);
+    height:var(--heightCell);
 }
 .mch1p2{/* Mesmo probleminha nunca da pra por no top*/
-    border-top: 3px solid #800000;
+    border-top: var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
 }
 
 /* Montagem de celulas do grafico Manchester Diferencial */
 
 .dmch0p1{/*Sem inversão*/
-    border-right: 3px solid #800000;
-    border-left: 3px solid #800000;
-    border-bottom: 3px solid #800000;
-}
+    border-top: transparent;
+    border-right: var(--drawLineCODEC);
+    border-left: var(--drawLineCODEC);
+    border-bottom: var(--drawLineCODEC);
+    height:var(--heightCell);
+} /*Parte 1 de quando é 0 */
 .dmch0p2{
-    border-top: 3px solid #800000;
-}
+    border-top: var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    height:var(--heightCell);
+} /*Parte 2 de quando é 0 */
 .dmch0p1Inv{/*Sem inversão*/
-    border-right: 3px solid #800000;
-    border-left: 3px solid #800000;
-    border-top: 3px solid #800000;
+    border-right: var(--drawLineCODEC);
+    border-left: var(--drawLineCODEC);
+    border-top: var(--drawLineCODEC);
+    height:var(--heightCell);
 }
 .dmch0p2Inv{/*Sem inversão*/
-    border-bottom: 3px solid #800000;
+    border-top: transparent;
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    height:var(--heightCell);
 }
 
 .dmch1p1{
-    border-top: 3px solid #800000;
-    border-right: 3px solid #800000;
-    height:80px
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawLineCODEC);
+    height:var(--heightCell);
 }
 .dmch1p2{/* Mesmo probleminha nunca da pra por no top*/
-    border-bottom: 3px solid #800000;
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
 }
 .dmch1p1Inv{
-    border-right: 3px solid #800000;
-    border-bottom: 3px solid #800000;
+    border-right: var(--drawLineCODEC);
+    border-bottom: var(--drawLineCODEC);
     height:80px
 }
 .dmch1p2Inv{
-    border-top: 3px solid #800000;
+    border-top: var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
 }
 
-/* Montagem das celulas do grafico RZ
-/* Caso de 1 e 1 repetido mas n funcionou então esta no proprio codigo */
-.rz1 {
-    border-left:3px solid #800000;
-    border-top: 3px solid #800000;
+/* Montagem das celulas do grafico NRZUnipolar*/
+.nrz1 {/*Border top n funciona em nada*/
+    border-left:var(--drawLineCODEC);
+    border-top: var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    height:var(--heightCell);
 }
-.rz11{/*N funciona*/
-    border-top: 3px solid #800000;
+.nrz11{/*N funciona*/
+    border-top: var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    height:var(--heightCell);
 }
 
 /* Casos de 0 e 0 repetido */
-.rz0 {
-    border-left: 3px solid #800000;
-    border-bottom:3px solid #800000;
+.nrz0 {
+    border-top: transparent;
+    border-left: var(--drawLineCODEC);
+    border-bottom:var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    height: 80px;
 }
-.rz00{
-    border-bottom: 3px solid #800000;
+.nrz00{
+    border-top: transparent;
+    border-bottom:var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    height:var(--heightCell);
 }
 
+/* Montagem das celulas do grafico NRZLevel */
+.nrzl0 {/*Border top n funciona em nada*/
+    border-left:var(--drawLineCODEC);
+    border-top: var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    height:var(--heightCell);
+}
+.nrzl00{/*N funciona*/
+    border-top: var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    height:var(--heightCell);
+}
+
+/* Casos de 1 e 1 repetido */
+.nrzl1 {
+    border-top: transparent;
+    border-left: var(--drawLineCODEC);
+    border-bottom:var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    height:var(--heightCell);
+}
+.nrzl11{
+    border-top: transparent;
+    border-bottom:var(--drawLineCODEC);
+    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    height:var(--heightCell);
+}
+
+/* Para por uma linha no meio da celula pra representar o eixo do tempo */
+
+.l0 {
+    position: relative;
+    line-height: 1;
+}
+
+.l0::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 3px;
+    background-color: black;
+}
+
+.l1 {
+    position: relative;
+    line-height: 1;
+}
+
+.l1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 51.7%;
+    height: 3px;
+    background-color: black;
+}
 
