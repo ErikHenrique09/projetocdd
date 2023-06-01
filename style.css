@@ -1,20 +1,22 @@
 
 :root {
+    /* Sobre a pagina */
+    --bgColor: lightgrey;
     /*Propriedades da linha tracejada do grafico*/
-    --colorTrace: gray;
     --widthTrace: 3px;
+    --colorTrace: gray;
     --typeTrace: dashed;
-
+    --drawTrace: var(--widthTrace) var(--colorTrace) var(--typeTrace);
     /*Propriedades das celulas que montam a codificação de linha*/
     --heightCell: 80px;
     --widthLineCODEC: 3px;
     --typeLineCODEC: solid;
     --colorLineCODEC: #800000;
-    --drawLineCODEC: var(--widthLineCODEC)  var(--typeLineCODEC)  var(--colorLineCODEC)  ;
+    --drawLineCODEC: var(--widthLineCODEC)  var(--typeLineCODEC)  var(--colorLineCODEC);
 }
 
 body{
-    background-color: lightgrey;
+    background-color:var(--bgColor);
 }
 
 label{
@@ -29,7 +31,7 @@ label{
     font-weight: 500;
     font-size: 20px;
     border: transparent;
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
     width: 50px;
 }
 .legenda:hover{
@@ -37,7 +39,7 @@ label{
 }
 
 .normRow{
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace)
 }
 
 .leftBorder{
@@ -63,7 +65,7 @@ label{
 }
 .mch0p2{
     border-bottom: var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
     height:var(--heightCell);
 }
 
@@ -80,7 +82,7 @@ label{
 }
 .mch1p2{/* Mesmo probleminha nunca da pra por no top*/
     border-top: var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
 }
 
 /* Montagem de celulas do grafico Manchester Diferencial */
@@ -94,7 +96,7 @@ label{
 } /*Parte 1 de quando é 0 */
 .dmch0p2{
     border-top: var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
     height:var(--heightCell);
 } /*Parte 2 de quando é 0 */
 .dmch0p1Inv{/*Sem inversão*/
@@ -106,7 +108,7 @@ label{
 .dmch0p2Inv{/*Sem inversão*/
     border-top: transparent;
     border-bottom: var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
     height:var(--heightCell);
 }
 
@@ -117,43 +119,42 @@ label{
 }
 .dmch1p2{/* Mesmo probleminha nunca da pra por no top*/
     border-bottom: var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
 }
 .dmch1p1Inv{
     border-right: var(--drawLineCODEC);
     border-bottom: var(--drawLineCODEC);
-    height:80px
+    height:var(--heightCell);
 }
 .dmch1p2Inv{
     border-top: var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
 }
 
 /* Montagem das celulas do grafico NRZUnipolar*/
-.nrz1 {/*Border top n funciona em nada*/
-    border-left:var(--drawLineCODEC);
-    border-top: var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
-    height:var(--heightCell);
-}
-.nrz11{/*N funciona*/
-    border-top: var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
-    height:var(--heightCell);
-}
-
-/* Casos de 0 e 0 repetido */
 .nrz0 {
     border-top: transparent;
     border-left: var(--drawLineCODEC);
     border-bottom:var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
     height: 80px;
 }
 .nrz00{
     border-top: transparent;
     border-bottom:var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+
+.nrz1 {/*Border top n funciona em nada*/
+    border-left:var(--drawLineCODEC);
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+.nrz11{/*N funciona*/
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
     height:var(--heightCell);
 }
 
@@ -161,37 +162,121 @@ label{
 .nrzl0 {/*Border top n funciona em nada*/
     border-left:var(--drawLineCODEC);
     border-top: var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
     height:var(--heightCell);
 }
 .nrzl00{/*N funciona*/
     border-top: var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
     height:var(--heightCell);
 }
 
-/* Casos de 1 e 1 repetido */
 .nrzl1 {
     border-top: transparent;
     border-left: var(--drawLineCODEC);
     border-bottom:var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
     height:var(--heightCell);
 }
 .nrzl11{
     border-top: transparent;
     border-bottom:var(--drawLineCODEC);
-    border-right: var(--widthTrace) var(--typeTrace) var(--colorTrace);
+    border-right: var(--drawTrace);
     height:var(--heightCell);
 }
 
-/* Para por uma linha no meio da celula pra representar o eixo do tempo */
+/*Montagem das celulas do grafico NRZInvert*/
+.nrzi0{
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+.nrzi0Inv{
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
 
+.nrzi1{
+    border-left: var(--drawLineCODEC);
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+.nrzi1Inv{
+    border-left: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    border-top: var(--drawLineCODEC);
+    height:var(--heightCell);
+}
+
+/*Montagem das celulas do grafico RZ*/
+
+.rz {
+    height: var(--heightCell);
+}
+
+.lrz1{
+    position: relative;
+} /*linha vertical inferior*/
+.lrz1::after {
+    content: "";
+    position: absolute;
+    top: 48.7%;
+    right: 0;
+    left:0;
+    height: 53%;
+    width: 3px;
+    background-color: var(--colorLineCODEC);
+}
+
+.lrz2 {
+    position: relative;
+    line-height: 1;
+}/*linha horizontal inferior*/
+.lrz2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 48%;
+    height: 3px;
+    background-color: var(--colorLineCODEC);
+}
+
+.lrz3{
+    position: relative;
+}
+.lrz3::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left:0;
+    height: 52%;
+    width: 3px;
+    background-color: var(--colorLineCODEC);
+}
+
+.lrz5 {
+    position: relative;
+    line-height: 1;
+}/* linha horizontal superior*/
+.lrz5::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 3px;
+    background-color: var(--colorLineCODEC);
+}
+
+/* Para por uma linha no meio da celula pra representar o eixo do tempo */
 .l0 {
     position: relative;
     line-height: 1;
 }
-
 .l0::before {
     content: '';
     position: absolute;
@@ -206,7 +291,6 @@ label{
     position: relative;
     line-height: 1;
 }
-
 .l1::before {
     content: '';
     position: absolute;
@@ -216,4 +300,5 @@ label{
     height: 3px;
     background-color: black;
 }
+
 
