@@ -1,37 +1,116 @@
-body {
-    background-color: #343a40;
-    color: #7a4c4c;
+
+body{
+    background-color: redm;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-    max-width: 600px; /* largura máxima do container */
-    margin: 0 auto; /* centraliza o container horizontalmente */
-    /* outros estilos personalizados */
+label{
+    font-size: 15px;
+    font-weight: 1000;
+    color: black
 }
 
-.matriz-row {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .matriz-cell {
+.legenda{
+    color: black;
+    /*text-align: center;*/
+    font-weight: 500;
+    font-size: 20px;
+    border: transparent;
     width: 50px;
-    height: 50px;
-    border: 1px solid #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .matriz-space {
-    width: 80%;
-    height: 80%;
-    background-color: white;
-  }
-  
-  
+}
+.legenda:hover{
+    background-color: grey;
+}
+
+.leftBorder{
+    margin-right: 50px;
+    border-left: 3px solid black;
+    border-right: 10px;
+}
+
+.bottomBorder{
+    border-bottom: 3px solid black;
+}
+
+/* Montagem de celulas dio grafico Manchester*/
+.mch0p1{
+    border-right: 3px solid #800000;
+}
+.mch0p11{
+    border-right: 3px solid #800000;
+    border-left: 3px solid #800000;
+}
+.mch0p2{
+    border-bottom: 3px solid #800000;
+}
+
+.mch1p1{
+    border-bottom: 3px solid #800000;
+    border-right: 3px solid #800000;
+    height:80px
+}
+.mch1p11{
+    border-bottom: 3px solid #800000;
+    border-right: 3px solid #800000;
+    border-left: 3px solid #800000;
+    height:80px
+}
+.mch1p2{/* Mesmo probleminha nunca da pra por no top*/
+    border-top: 3px solid #800000;
+}
+
+/* Montagem de celulas do grafico Manchester Diferencial */
+
+.dmch0p1{/*Sem inversão*/
+    border-right: 3px solid #800000;
+    border-left: 3px solid #800000;
+    border-bottom: 3px solid #800000;
+}
+.dmch0p2{
+    border-top: 3px solid #800000;
+}
+.dmch0p1Inv{/*Sem inversão*/
+    border-right: 3px solid #800000;
+    border-left: 3px solid #800000;
+    border-top: 3px solid #800000;
+}
+.dmch0p2Inv{/*Sem inversão*/
+    border-bottom: 3px solid #800000;
+}
+
+.dmch1p1{
+    border-top: 3px solid #800000;
+    border-right: 3px solid #800000;
+    height:80px
+}
+.dmch1p2{/* Mesmo probleminha nunca da pra por no top*/
+    border-bottom: 3px solid #800000;
+}
+.dmch1p1Inv{
+    border-right: 3px solid #800000;
+    border-bottom: 3px solid #800000;
+    height:80px
+}
+.dmch1p2Inv{
+    border-top: 3px solid #800000;
+}
+
+/* Montagem das celulas do grafico RZ
+/* Caso de 1 e 1 repetido mas n funcionou então esta no proprio codigo */
+.rz1 {
+    border-left:3px solid #800000;
+    border-top: 3px solid #800000;
+}
+.rz11{/*N funciona*/
+    border-top: 3px solid #800000;
+}
+
+/* Casos de 0 e 0 repetido */
+.rz0 {
+    border-left: 3px solid #800000;
+    border-bottom:3px solid #800000;
+}
+.rz00{
+    border-bottom: 3px solid #800000;
+}
+
+

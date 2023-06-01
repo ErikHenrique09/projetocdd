@@ -4,21 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Tela de Matriz</title>
-    <style>
-
-        .matrix-cell-red {
-            border-left:3px solid #800000;
-            background-color: 3px solid #ffffff;
-            
-        }
-
-        .matrix-cell-white {
-            border-left: 3px solid #800000;
-            border-bottom:3px solid #800000;
-        }
-
-    </style>
 </head>
 <body>
 <div class="container col-12">
@@ -34,10 +21,10 @@
         <div class="form-group ">
             <label for="method">Método:</label>
             <select class="form-control" id="method">
-            <option value="RN">RN</option>
-            <option value="RNZ">RNZ</option>
-            <option value="Manchester">Manchester</option>
-            <option value="ManchesterDiferencial">Manchester Diferencial</option>
+                <option value="NRZ">NRZ</option>
+                <option value="RZ">RZ</option>
+                <option value="Manchester">Manchester</option>
+                <option value="ManchesterDiferencial">Manchester Diferencial</option>
             </select>
         </div>
         <div class="form-group">
@@ -50,9 +37,9 @@
         </div>
     </div>
     <div class="row mt-12">
-        <div class="col-12">
-        <br>
-        <div id="matrix"></div>
+        <div class="col-6 mx-auto text-center">
+            <br>
+            <div id="matriz"></div>
         </div>
     </div>
 </div>
