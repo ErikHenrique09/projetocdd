@@ -41,6 +41,9 @@ function drawMatrix() {
 
     document.getElementById("text").value = "";
     document.getElementById("matriz").innerHTML = matrixHTML;
+    document.getElementById("tens").innerHTML = (method === "NRZ")
+                                                ? "<div class='binary'><div class='one'>1</div><div class='zero'>0</div></div>"
+                                                : "<div class='tensoes'><div>+V</div><br><br><div>-V</div></div>";
 }
 
 function drawNRZUnipolar(rows, cols, text, altGraph, altLeg) {
@@ -70,7 +73,7 @@ function drawNRZUnipolar(rows, cols, text, altGraph, altLeg) {
             if (text[j] === "0") {
                 matrixHTML += `<td class=${(j === 0 || text[j - 1] === "0") ? 'nrz00' : 'nrz0'} style='border-top: transparent;'></td>`;
             } else {
-                matrixHTML += (j === 0 || text[j - 1] === "1") ? "<td class='nrz11' style='border-top: 3px solid #800000'></td>" : "<td style='border-top: 3px solid #800000' class='nrz1'></td>";
+                matrixHTML += (j === 0 || text[j - 1] === "1") ? "<td class='nrz11' style='border-top: var(--drawLineCODEC'></td>" : "<td style='border-top: var(--drawLineCODEC' class='nrz1'></td>";
             }
         }
 
@@ -111,7 +114,7 @@ function drawNRZLevel(rows, cols, text, altGraph, altLeg) {
 
             // aqui e necessario cuidar do valor anterior por isso os ifs ternarios
             if (text[j] === "0") {
-                matrixHTML += `<td class=' l0 ${(j === 0 || text[j - 1] === "0") ? 'nrzl00' : 'nrzl0'}' style='border-top: 3px solid #800000'></td>`;
+                matrixHTML += `<td class=' l0 ${(j === 0 || text[j - 1] === "0") ? 'nrzl00' : 'nrzl0'}' style='border-top: var(--drawLineCODEC'></td>`;
             } else {
                 matrixHTML += (j === 0 || text[j - 1] === "1") ? "<td class=' l1 nrzl11' style='border-top: transparent;'></td>" : "<td class='l1 nrzl1' style='border-top: transparent;'></td>";
             }
@@ -155,7 +158,7 @@ function drawNRZInvert(rows, cols, text, altGraph, altLeg) {
             if (text[j] === "0") {
                 matrixHTML += (inv === 0) ? "<td class='l0 nrzi0' style='border-top:var(--drawLineCODEC);'></td>" : "<td class='l1 nrzi0Inv'></td>";
             } else {
-                matrixHTML += (inv === 0) ? "<td class='l1 nrzi1'></td>" : "<td class='l0 nrzi1Inv' style='border-top: 3px solid #800000'></td>";
+                matrixHTML += (inv === 0) ? "<td class='l1 nrzi1'></td>" : "<td class='l0 nrzi1Inv' style='border-top: var(--drawLineCODEC'></td>";
                 inv = (inv === 0) ? 1 : 0;
             }
         }
@@ -235,7 +238,6 @@ function drawManchester(rows, cols, text, altGraph, altLeg) {
 
         let cont = 0;
         for (let j = 0; j < cols * 2; j++) {
-
             // Linhas adicionais
             if (i !== altGraph && i !== altLeg) {
                 matrixHTML += `<td ${(j % 2 !== 0) ? "class='normRow'" : ''} style='border-top: transparent;'></td>`
@@ -309,12 +311,12 @@ function drawDifferentialManchester(rows, cols, text, altGraph, altLeg) {
                 if (text[j] === "0") {
                     matrixHTML += (inv === 0) ? "<td class='l1 dmch0p1' style='border-top: transparent;'></td>" : "<td class='l0 dmch0p1Inv' style='border-top:var(--drawLineCODEC);'></td>";
                 } else {
-                    matrixHTML += (inv === 0) ? "<td class='l0 dmch1p1'  style='border-top: 3px solid #800000'></td>" : "<td class='l1 dmch1p1Inv' style='border-top: transparent;'></td>";
+                    matrixHTML += (inv === 0) ? "<td class='l0 dmch1p1'  style='border-top: var(--drawLineCODEC'></td>" : "<td class='l1 dmch1p1Inv' style='border-top: transparent;'></td>";
 
                 }
             } else {
                 if (text[j] === "0") {
-                    matrixHTML += (inv === 0) ? "<td class='l0 dmch0p2' style='border-top: 3px solid #800000'></td>" : "<td class='l1 dmch0p2Inv' style='border-top: transparent;'></td>";
+                    matrixHTML += (inv === 0) ? "<td class='l0 dmch0p2' style='border-top: var(--drawLineCODEC'></td>" : "<td class='l1 dmch0p2Inv' style='border-top: transparent;'></td>";
                 } else {
                     matrixHTML += (inv === 0) ? "<td class='l1 dmch1p2' style='border-top: transparent;'></td>" : "<td class='l0 dmch1p2Inv' style='border-top:var(--drawLineCODEC);'></td>";
 
