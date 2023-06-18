@@ -1,0 +1,386 @@
+
+:root {
+    /* Sobre a pagina */
+    --bgColor: white;
+    /*Propriedades da linha tracejada do grafico*/
+    --widthTrace: 3px;
+    --colorTrace: gray;
+    --typeTrace: dashed;
+    --drawTrace: var(--widthTrace) var(--colorTrace) var(--typeTrace);
+    /*Propriedades das celulas que montam a codificação de linha*/
+    --heightCell: 80px;
+    --widthLineCODEC: 3px;
+    --typeLineCODEC: solid;
+    --colorLineCODEC: #800000;
+    --drawLineCODEC: var(--widthLineCODEC)  var(--typeLineCODEC)  var(--colorLineCODEC);
+}
+
+/* Estilização */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #262626;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #595959;
+    border-radius: 20px;
+    border: 3px solid #262626;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+p{
+    text-align: justify;
+}
+
+.box {
+    transition: box-shadow .3s;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 2%;
+    height: 350px;
+    margin-bottom: 0.5%;
+    margin-left: 0.3%;
+}
+
+.bg-index{
+    background-color: #D3D3D3;
+}
+
+.image{
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -10px;
+}
+
+.box:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+}
+
+.text-algoritmo{
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.skeleton{
+    background: #CFCFCF;
+    border-radius: 2%;
+    text-align:center;
+}
+
+/* Desenho dos graficos */
+.tensoes {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50%;
+}
+
+.tensoes div {
+    margin-bottom: 5px;
+}
+
+.binary{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25%;
+    
+}
+
+.binary .zero{
+    padding-top: 50px;
+}
+
+.binary .one{
+    padding-top: 80%;
+}
+
+.responsive-matrix {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.legenda{
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    border: transparent;
+    border-right: var(--drawTrace);
+    width: 50px;
+}
+.legenda:hover{
+    background-color: #CFCFCF;
+}
+
+.normRow{
+    border-right: var(--drawTrace)
+}
+
+.leftBorder{
+    margin-right: 50px;
+    border-left: 3px solid black;
+    border-right: 10px;
+}
+
+.bottomBorder{
+    border-bottom: 3px solid black;
+}
+
+/* Montagem de celulas dio grafico Manchester*/
+.mch0p1{
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawLineCODEC);
+    height:var(--heightCell);
+}
+.mch0p11{
+    border-right: var(--drawLineCODEC);
+    border-left: var(--drawLineCODEC);
+    height:var(--heightCell);
+}
+.mch0p2{
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+
+.mch1p1{
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--drawLineCODEC);
+    height:var(--heightCell);
+}
+.mch1p11{
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--drawLineCODEC);
+    border-left: var(--drawLineCODEC);
+    height:var(--heightCell);
+}
+.mch1p2{/* Mesmo probleminha nunca da pra por no top*/
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+}
+
+/* Montagem de celulas do grafico Manchester Diferencial */
+
+.dmch0p1{/*Sem inversão*/
+    border-top: transparent;
+    border-right: var(--drawLineCODEC);
+    border-left: var(--drawLineCODEC);
+    border-bottom: var(--drawLineCODEC);
+    height:var(--heightCell);
+} /*Parte 1 de quando é 0 */
+.dmch0p2{
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+} /*Parte 2 de quando é 0 */
+.dmch0p1Inv{/*Sem inversão*/
+    border-right: var(--drawLineCODEC);
+    border-left: var(--drawLineCODEC);
+    border-top: var(--drawLineCODEC);
+    height:var(--heightCell);
+}
+.dmch0p2Inv{/*Sem inversão*/
+    border-top: transparent;
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+
+.dmch1p1{
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawLineCODEC);
+    height:var(--heightCell);
+}
+.dmch1p2{/* Mesmo probleminha nunca da pra por no top*/
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+}
+.dmch1p1Inv{
+    border-right: var(--drawLineCODEC);
+    border-bottom: var(--drawLineCODEC);
+    height:var(--heightCell);
+}
+.dmch1p2Inv{
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+}
+
+/* Montagem das celulas do grafico NRZUnipolar*/
+.nrz0 {
+    border-top: transparent;
+    border-left: var(--drawLineCODEC);
+    border-bottom:var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height: 80px;
+}
+.nrz00{
+    border-top: transparent;
+    border-bottom:var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+
+.nrz1 {/*Border top n funciona em nada*/
+    border-left:var(--drawLineCODEC);
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+.nrz11{/*N funciona*/
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+
+/* Montagem das celulas do grafico NRZLevel */
+.nrzl0 {/*Border top n funciona em nada*/
+    border-left:var(--drawLineCODEC);
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+.nrzl00{/*N funciona*/
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+
+.nrzl1 {
+    border-top: transparent;
+    border-left: var(--drawLineCODEC);
+    border-bottom:var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+.nrzl11{
+    border-top: transparent;
+    border-bottom:var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+
+/*Montagem das celulas do grafico NRZInvert*/
+.nrzi0{
+    border-top: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+.nrzi0Inv{
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+
+.nrzi1{
+    border-left: var(--drawLineCODEC);
+    border-bottom: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    height:var(--heightCell);
+}
+.nrzi1Inv{
+    border-left: var(--drawLineCODEC);
+    border-right: var(--drawTrace);
+    border-top: var(--drawLineCODEC);
+    height:var(--heightCell);
+}
+
+/*Montagem das celulas do grafico RZ*/
+
+.rz {
+    height: var(--heightCell);
+}
+
+.lrz1{
+    position: relative;
+} /*linha vertical inferior*/
+.lrz1::after {
+    content: "";
+    position: absolute;
+    top: 48.7%;
+    right: 0;
+    left:0;
+    height: 53%;
+    width: var(--widthLineCODEC);
+    background-color: var(--colorLineCODEC);
+}
+
+.lrz2 {
+    position: relative;
+    line-height: 1;
+}/*linha horizontal inferior*/
+.lrz2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 48%;
+    height: var(--widthLineCODEC);
+    background-color: var(--colorLineCODEC);
+}
+
+.lrz3{
+    position: relative;
+}
+.lrz3::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left:0;
+    height: 52%;
+    width: var(--widthLineCODEC);
+    background-color: var(--colorLineCODEC);
+}
+
+.lrz5 {
+    position: relative;
+    line-height: 1;
+}/* linha horizontal superior*/
+.lrz5::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: var(--widthLineCODEC);
+    background-color: var(--colorLineCODEC);
+}
+
+/* Para por uma linha no meio da celula pra representar o eixo do tempo */
+.l0 {
+    position: relative;
+    line-height: 1;
+}
+.l0::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: var(--widthLineCODEC);
+    background-color: black;
+}
+
+.l1 {
+    position: relative;
+    line-height: 1;
+}
+.l1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 51.7%;
+    height: var(--widthLineCODEC);
+    background-color: black;
+}
+
+

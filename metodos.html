@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos de codificação</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" type="image/png" href="./assets/images/logo-wave.png"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <nav>
+            <a class="navbar-brand" href="#">
+                <img src="./assets/images/logo-white.png" width="30" class="d-inline-block align-top" alt=""
+                     style="margin: 1px;">
+            </a>
+        </nav>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Introdução</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="metodos.html">Métodos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="resultados.html">Resultados</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="https://github.com/ErikHenrique09/projetocdd" class="nav-link">
+                        <img src="./assets/images/github (1).png" alt="github">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="container px-4 py-5" id="featured-3">
+        <h1 class="pb-2 border-bottom">Metodos de codificação de linha</h1>
+        Os métodos unipolares e polares são dois dos principais tipos de codificação de linha.
+        <div class="row py-5 justify-content-center">
+            <div class="feature col-lg-5 col-12 box">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
+                    <img src="./assets/images/logodark2.png" alt="aa" width="70" height="70" class="mx-auto">
+                </div>
+                <h3 class="fs-2">Métodos Unipolares</h3>
+                <p>
+                    Em métodos unipolares, um único nível de tensão é utilizado para
+                    representar o bit "1", enquanto o nível zero (ausência de tensão)
+                    é utilizado para representar o bit "0". Isso significa que apenas
+                    um tipo de sinal é utilizado para transmitir os bits de dados.
+                </p>
+                <a href="#metodos-unipolares" class="icon-link">
+                    Ver mais
+                    <img src="./assets/images/arraste-para-a-direita.png" alt="seta">
+                </a>
+            </div>
+            <div class="feature col-lg-5 col-12 box">
+                <div
+                    class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="./assets/images/logodark2.png" alt="aa" width="70" height="70" class="mx-auto">
+                </div>
+                <h3 class="fs-4">Metodos Polares</h3>
+                <p>
+                    Nos métodos polares de codificação de linha, os bits "0" e "1" são
+                    representados por níveis de tensão positivos e negativos, respectivamente.
+                    Isso permite que os sinais assumam valores em ambos os lados do eixo de tempo,
+                    facilitando a distinção entre os bits.
+                </p>
+                <a href="#metodos-polares" class="icon-link">
+                    Ver mais
+                    <img src="./assets/images/arraste-para-a-direita.png" alt="seta">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MEtodos Unipolares-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="metodos-unipolares">
+                <div class="col-12 align-content-center">
+                    <div class="container px-4 py-5">
+                        <br>
+                        <h1 class="pb-2">Métodos Unipolares</h1>
+                        <p>Em um método unipolar, todos os níveis de sinal se encontram
+                        em um dos lados do eixo do tempo, acima ou abaixo dele.</p>
+                        <hr class="featurette-divider">
+                        <div class="row featurette">
+                            <div class="col-md-12 order-md-1 order-lg-2 col-lg-6">
+                                <h3 class="pilsen">NRZ (Non-Return-to-Zero)</h3>
+                                <p class="align">
+                                    No metodo NRZ (sem retorno a zero) a voltagem positiva
+                                    define o bit 1 e a voltagem zero define o bit 0. Ele é
+                                    chamado NRZ porque o sinal não retorna a zero no meio do bit.
+                                </p>
+                                <p>
+                                    Comparado com seu equivalente polar (NRZ-L, NRZ-I),
+                                    esse método custa muito caro, por essa razão, esse método
+                                    normalmente não é usado em comunicação de dados.
+                                </p>
+                            </div>
+                            <div class="col-md-12 order-md-1 col-sm-12 col-lg-6">
+                                <div class="content-center" style="text-align: center;">
+                                   <a><b>NRZ Unipolar</b></a>
+                                </div>
+                                <img
+                                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                    width=100% height="100%" src="./assets/images/nrz.png" role="img"
+                                    aria-label="Placeholder: 500x500"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Chopp</title>
+                                <div class="content-center" style="text-align: center;">
+                                   <a>Eixo X: Tempo | Eixo Y: Amplitude</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Metodos Polares -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="metodos-polares">
+                <div class="col-12 align-content-center">
+                    <div class="container px-4 py-5">
+                        <br>
+                        <h1 class="pb-2">Métodos Polares</h1>
+                        <p>Em métodos polares, as voltagens se encontram em ambos os lados
+                        do eixo de tempo. Por exemplo, o nível de voltagem para 0 pode ser
+                        positivo e o nível de voltagem para 1 pode ser negativo.</p>
+                        <hr class="featurette-divider">
+                        <div class="row featurette">
+                             <div class="col-md-12 order-md-1 order-lg-2 col-lg-6">
+                                <h3 class="pilsen">NRZ Polar</h3>
+                                <p class="align">
+                                    Na codificação NRZ polar, é utilizado dois níveis de amplitude
+                                    de voltagem. Duas importantes versões do NRZ polar são:
+                                </p>
+                                <p class="align">
+                                    NRZ-L (NRZ-Level), o nível da voltagem determina o valor do bit.
+                                </p>
+                                <p class="align">
+                                    NRZ-I (NRZ-Invert), a mudança ou falta de mudança no nível da
+                                    voltagem determina o valor do bit. Esse método não modifica o
+                                    sinal de saída quando envia bit “0”, e inverte o sinal do estado
+                                    anterior quando enviando bit “1”.
+                                </p>
+                            </div>
+                            <div class="col-md-12 order-md-2 col-sm-12 col-lg-6">
+                                <div class="content-center" style="text-align: center;">
+                                   <a><b>NRZ-L (NRZ-Level)</b></a>
+                                </div>
+                                <img
+                                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                    width=100% height="100%" src="./assets/images/nrzl.png" role="img"
+                                    aria-label="Placeholder: 500x500"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Chopp</title>
+                                <div class="content-center" style="text-align: center;">
+                                   <a>Eixo X: Tempo | Eixo Y: Amplitude</a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="featurette-divider">
+                        <div class="row featurette">
+                            <div class="col-md-12 order-lg-2 order-md-1 col-lg-6">
+                                <h3 class="ipa">NRZ-L X NRZ-I</h3>
+                                <p class="align">
+                                    Os dois metodos apresentam um baixo nivel de complexidade, sendo de
+                                    facil entendimento e implementação. Indo alem, os dois metodos serviram
+                                    de base para implementações mais robustas como os metodos Manchester e
+                                    Manchester diferencial
+                                </p>
+                                <p class="align">
+                                    Ambos sofrem com o problema de sincronização (clocks do emissor
+                                    e do receptor não sincronizados), esse problema é mais sério no NRZ-L que
+                                    no NRZ-I. Embora uma longa sequência de 0s possa provocar problemas em ambos
+                                    os métodos, uma longa seqüência de 1s afeta apenas o NRZ-L.
+                                </p>
+                            </div>
+                            <div class="col-md-12 order-lg-1 order-md-2 col-sm-12 col-lg-6">
+                                <div class="content-center" style="text-align: center;">
+                                   <a><b>NRZ-I (NRZ-Invert)</b></a>
+                                </div>
+                                <img
+                                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                    width=100% height="100%" src="./assets/images/nrzl.png" role="img"
+                                    aria-label="Placeholder: 500x500"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Chopp</title>
+                                <div class="content-center" style="text-align: center;">
+                                   <a>Eixo X: Tempo | Eixo Y: Amplitude</a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="featurette-divider">
+                        <div class="row featurette">
+                            <div class="col-md-12 order-md-1 order-lg-2 col-lg-6">
+                                <h3 class="pilsen">RZ (Return to Zero)</h3>
+                                <p class="align">
+                                    No método RZ, o sinal muda não entre bits, mas sim durante o bit.
+                                    No grafico, podemos ver que o sinal vai a 0 no meio de cada bit,
+                                    ele permanece aí até o início do próximo bit.
+                                </p>
+                                <p class="align">
+                                    A principal desvantagem da codificação RZ é que ela requer duas mudanças
+                                    de sinal para codificar um bit e, portanto, ocupa maior largura de banda.
+                                </p>
+                                <p class="align">
+                                    Outro problema é a complexidade, o método RZ usa três níveis de voltagem,
+                                    que é mais complexo de criar e distinguir, devido a esses problemas esse
+                                    método não é mais utilizado.
+                                </p>
+                            </div>
+                            <div class="col-md-12 order-md-2 col-sm-12 col-lg-6">
+                                <div class="content-center" style="text-align: center;">
+                                   <a><b>RZ</b></a>
+                                </div>
+                                <img
+                                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                    width=100% height="100%" src="./assets/images/rz.png" role="img"
+                                    aria-label="Placeholder: 500x500"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Chopp</title>
+                                <div class="content-center" style="text-align: center;">
+                                   <a>Eixo X: Tempo | Eixo Y: Amplitude</a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="featurette-divider">
+                        <div class="row featurette">
+                            <div class="col-md-12 order-lg-2 order-md-1 col-lg-6">
+                                <h3 class="ipa">Manchester</h3>
+
+                                <p class="align">
+                                    Consideramos que o resultado da junção de características eficientes dos
+                                    métodos de codificação RZ e NRZ-L formam o método de codificação de linha
+                                    Manchester.
+                                </p>
+                                <p class="align">
+                                    Na codificação Manchester, a duração do bit é dividida em duas
+                                    metades. A voltagem permanece em um nível durante a primeira metade e se
+                                    desloca para o outro nível na segunda metade.
+                                </p>
+                                <p class="align">
+                                    Durante a transmissão de um bit, o sinal se sincroniza automaticamente,
+                                    permitindo que o receptor se ajuste à velocidade de transmissão do sinal
+                                    síncrono. Isso elimina a necessidade de linhas de transmissão adicionais.
+                                </p>
+                            </div>
+                            <div class="col-md-12 order-lg-1 order-md-2 col-sm-12 col-lg-6">
+                                <div class="content-center" style="text-align: center;">
+                                   <a><b>Manchester</b></a>
+                                </div>
+                                <img
+                                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                    width=100% height="100%" src="./assets/images/manchester.png" role="img"
+                                    aria-label="Placeholder: 500x500"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Chopp</title>
+                                <div class="content-center" style="text-align: center;">
+                                   <a>Eixo X: Tempo | Eixo Y: Tensão</a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="featurette-divider">
+                        <div class="row featurette">
+                            <div class="col-md-12 order-md-1 order-lg-2 col-lg-6">
+                                <h3 class="pilsen">Manchester Diferencial</h3>
+                                <p class="align">
+                                    O método Manchester diferencial combina os conceitos dos métodos RZ e NRZ-I.
+                                    Existe sempre uma transição no meio do bit, mas os valores são determinados
+                                    no início dele. Se o próximo bit for 0, ocorre uma transição; caso o bit seguinte
+                                    seja 1, não ocorre nenhuma transição
+                                </p>
+                                <p class="align">
+                                    Semelhante ao método manchester, este método apresenta sua codificação com base
+                                    nas mudanças de fase na transmissão do sinal.
+                                </p>
+                                <p class="align">
+                                    Este método é considerado como uma codificação auto-sincronizada que permite que
+                                    o sinal de clock seja obtido do fluxo de dados e seu grande formato de sinal tem
+                                    maior imunidade a ruídos.
+                                </p>
+                            </div>
+                            <div class="col-md-12 order-md-2 col-sm-12 col-lg-6">
+                                <div class="content-center" style="text-align: center;">
+                                   <a><b>Manchester Diferencial</b></a>
+                                </div>
+                                <img
+                                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                    width=100% height="100%" src="./assets/images/manchesterdiferencial.png" role="img"
+                                    aria-label="Placeholder: 500x500"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <title>Chopp</title>
+                                <div class="content-center" style="text-align: center;">
+                                   <a>Eixo X: Tempo | Eixo Y: Amplitude</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Boostrap jquery e etc -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
