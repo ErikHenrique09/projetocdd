@@ -40,9 +40,12 @@ function drawMatrix() {
     }
 
     document.getElementById("text").value = "";
+
+    document.getElementById("bodySk").classList.remove("skeleton");
     document.getElementById("matriz").innerHTML = matrixHTML;
+
     document.getElementById("tens").innerHTML = (method === "NRZ")
-                                                ? "<div class='binary'><div class='one'>1</div><div class='zero'>0</div></div>"
+                                                ? "<div class='binary'><div class='one'>V</div><div class='zero'>0</div></div>"
                                                 : "<div class='tensoes'><div>+V</div><br><br><div>-V</div></div>";
 }
 
@@ -65,7 +68,7 @@ function drawNRZUnipolar(rows, cols, text, altGraph, altLeg) {
 
             // Linha de legenda
             if (i === altLeg) {
-                matrixHTML += `<td class='legenda' style='border-top: transparent;'><p>${text[j]}</p></td>`
+                matrixHTML += `<td class='legenda' style='border-top: transparent;'>${text[j]}</td>`
                 continue;
             }
 
@@ -108,7 +111,7 @@ function drawNRZLevel(rows, cols, text, altGraph, altLeg) {
 
             // Linha de legenda
             if (i === altLeg) {
-                matrixHTML += `<td class='legenda' style='border-top: transparent;'><p>${text[j]}</p></td>`
+                matrixHTML += `<td class='legenda' style='border-top: transparent;'>${text[j]}</td>`
                 continue;
             }
 
@@ -150,7 +153,7 @@ function drawNRZInvert(rows, cols, text, altGraph, altLeg) {
 
             // Linha de legenda
             if (i === altLeg) {
-                matrixHTML += `<td class='legenda' style='border-top: transparent;'><p>${text[j]}</p></td>`;
+                matrixHTML += `<td class='legenda' style='border-top: transparent;'>${text[j]}</td>`;
                 continue;
             }
 
@@ -193,13 +196,13 @@ function drawRZ(rows, cols, text, altGraph, altLeg) {
             if (i === altLeg) {
 
                 if (j % 2 === 0) {
-                    matrixHTML += `<td colspan="2" class='legenda' style='border-top: transparent;' ><p>${text[j]}</p></td>`;
+                    matrixHTML += `<td colspan="2" class='legenda' style='border-top: transparent;' >${text[j]}</td>`;
                 }
                 continue;
 
             }
+            
             // aqui e necessario cuidar do valor anterior por isso os ifs ternarios
-
             if (cont === 0) {
                 if (text[j] === "0") {
                     matrixHTML += `<td class='rz lrz1' style='border-bottom: var(--drawLineCODEC);border-top: transparent;'></td>`;
@@ -248,7 +251,7 @@ function drawManchester(rows, cols, text, altGraph, altLeg) {
             if (i === altLeg) {
 
                 if (j % 2 === 0) {
-                    matrixHTML += `<td colspan="2" class='legenda' style='border-top: transparent;' ><p>${text[j]}</p></td>`;
+                    matrixHTML += `<td colspan="2" class='legenda' style='border-top: transparent;' >${text[j]}</td>`;
                 }
                 continue;
 
@@ -301,7 +304,7 @@ function drawDifferentialManchester(rows, cols, text, altGraph, altLeg) {
             if (i === altLeg) {
 
                 if (j % 2 === 0)
-                    matrixHTML += `<td colspan="2" class='legenda' style='border-top: transparent;'><p>${text[j]}</p></td>`;
+                    matrixHTML += `<td colspan="2" class='legenda' style='border-top: transparent;'>${text[j]}</td>`;
 
                 continue;
             }

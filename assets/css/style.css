@@ -1,3 +1,4 @@
+
 :root {
     /* Sobre a pagina */
     --bgColor: white;
@@ -14,17 +15,71 @@
     --drawLineCODEC: var(--widthLineCODEC)  var(--typeLineCODEC)  var(--colorLineCODEC);
 }
 
-body{
-    background-color:var(--bgColor);
+/* Estilização */
+body::-webkit-scrollbar {
+    width: 12px;
 }
 
+body::-webkit-scrollbar-track {
+    background: #262626;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #595959;
+    border-radius: 20px;
+    border: 3px solid #262626;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+p{
+    text-align: justify;
+}
+
+.box {
+    transition: box-shadow .3s;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 2%;
+    height: 350px;
+    margin-bottom: 0.5%;
+    margin-left: 0.3%;
+}
+
+.bg-index{
+    background-color: #D3D3D3;
+}
+
+.image{
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -10px;
+}
+
+.box:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+}
+
+.text-algoritmo{
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.skeleton{
+    background: #CFCFCF;
+    border-radius: 2%;
+    text-align:center;
+}
+
+/* Desenho dos graficos */
 .tensoes {
-    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 8.5%;
-    margin-left: 25%;
+    margin-top: 50%;
 }
 
 .tensoes div {
@@ -32,12 +87,11 @@ body{
 }
 
 .binary{
-    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 8.5%;
-    margin-left: 25%;
+    margin-top: 25%;
+    
 }
 
 .binary .zero{
@@ -45,7 +99,7 @@ body{
 }
 
 .binary .one{
-    padding-top: 43px;
+    padding-top: 80%;
 }
 
 .responsive-matrix {
@@ -55,7 +109,7 @@ body{
 
 .legenda{
     color: black;
-    /*text-align: center;*/
+    text-align: center;
     font-weight: 500;
     font-size: 20px;
     border: transparent;
@@ -63,7 +117,7 @@ body{
     width: 50px;
 }
 .legenda:hover{
-    background-color: grey;
+    background-color: #CFCFCF;
 }
 
 .normRow{
